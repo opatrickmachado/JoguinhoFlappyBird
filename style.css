@@ -110,19 +110,27 @@
 
 /* Alterações para telas menores */
 @media only screen and (max-width: 600px) {
+    .bird {
+        height: 80px;
+        width: 104px;
+    }
+    .pipe_sprite {
+        width: 5vw;
+    }
+    .message {
+        font-size: 2em;
+        padding: 15px;
+    }
     .score {
-        font-size: 4vh; /* Reduz o tamanho do score */
-        top: 0; /* Move o score para o topo */
-        left: 0; /* Move o score para a esquerda */
+        font-size: 3vh; /* Reduz ainda mais o tamanho do score */
     }
     .ranking {
-        top: 0; /* Move o ranking para o topo */
-        right: 0; /* Move o ranking para a direita */
+        font-size: 3vh; /* Reduz ainda mais o tamanho do ranking */
     }
     .ranking_title {
-        font-size: 3vh; /* Reduz o tamanho do título do ranking */
+        font-size: 2.5vh; /* Reduz ainda mais o tamanho do título do ranking */
     }
     .ranking_list {
-        font-size: 2vh; /* Reduz o tamanho da lista de ranking */
+        font-size: 2vh; /* Reduz ainda mais o tamanho da lista de ranking */
     }
 }
