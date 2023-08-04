@@ -1,0 +1,97 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+    color: #01afff; /* Alterando a cor do texto para branco */
+}
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('images/background-img.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.bird {
+    height: 100px;
+    width: 130px;
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+    filter: hue-rotate(160deg); /* Alterando a cor do pássaro. Ajuste o valor para alterar a cor */
+}
+.pipe_sprite {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background: radial-gradient(#00FF00 0%, #008000 100%); /* Gradiente de verde claro para verde escuro */
+    border: 5px solid #333;
+	border-radius: 15px;
+}
+.message {
+	position: absolute;
+	z-index: 10;
+	color: #270070;
+	top: 30%;
+	left: 50%;
+	font-size: 4em;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.messageStyle{
+	background-color: rgba(255,255,255,0.8); /* Mudando a cor de fundo para branco e aumentando a opacidade */
+	padding: 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 25px;
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Adiciona uma sombra de texto preta suave */
+}
+.gameover {
+    color: red;
+}
+
+.restart {
+    color: blue;
+}
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 10vh;
+	font-weight: 700; /* Torna a fonte mais ousada */
+	color: #FFF; /* Alterando a cor do texto para branco */
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #333; /* Alterando a cor do traço do texto para um cinza escuro */
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Adiciona uma sombra de texto preta suave */
+    border-radius: 10px; /* Suaviza os cantos do fundo */
+    padding: 10px; /* Adiciona um pouco de espaço ao redor do texto */
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.score_val {
+	color: gold; /* A cor do score pode permanecer dourada para destacar */
+	font-weight: bold;
+}
+@media only screen and (max-width: 1080px) {
+    .message{
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+	.score{
+		font-size: 8vh;
+	}
+	.bird{
+		width: 120px;
+		height: 90px;
+	}
+	.pipe_sprite{
+		width: 14vw;
+	}
+}
