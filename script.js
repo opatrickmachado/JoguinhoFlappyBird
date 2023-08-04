@@ -4,10 +4,7 @@ let img = document.getElementById('bird-1');
 let sound_point = new Audio('sounds effect/point.mp3');
 let sound_die = new Audio('sounds effect/die.mp3');
 
-// getting bird element properties
 let bird_props = bird.getBoundingClientRect();
-
-// This method returns DOMReact -> top, right, bottom, left, x, y, width and height
 let background = document.querySelector('.background').getBoundingClientRect();
 
 let score_val = document.querySelector('.score_val');
@@ -18,7 +15,36 @@ let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-// Adicione este código para iniciar o jogo quando a tela for tocada ou Enter for pressionado
+let ranking = [];
+
+if(localStorage.getItem('ranking')){
+    ranking = JSON.parse(localStorage.getItem('ranking'));
+}
+
+let bird_dy = 0;
+
+document.addEventListener('keydown', (e) => {
+    if(e.key == 'ArrowUp' || e.key == ' '){
+        img.src = 'images/Bird-2.png';
+        bird_dy = -7.6;
+    }
+});
+
+document.addEventListener('keyup', (e) => {
+    if(e.key == 'ArrowUp' || e.key == ' '){
+        img.src = 'images/Bird.png';
+    }
+});
+
+document.addEventListener('touchstart', (e) => {
+    img.src = 'images/Bird-2.png';
+    bird_dy = -7.6;
+});
+
+document.addEventListener('touchend', (e) => {
+    img.src = 'images/Bird.png';
+});
+
 function startGame(e) {
     if(game_state != 'Play'){
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
@@ -42,49 +68,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Adicione este código para iniciar o jogo quando a tela for tocada
-document.addEventListener('touchstart', (e) => {
-    if(game_state != 'Play'){
-        document.querySelectorAll('.pipe_sprite').forEach((e) => {
-            e.remove();
-        });
-        img.style.display = 'block';
-        bird.style.top = '40vh';
-        game_state = 'Play';
-        message.innerHTML = '';
-        score_title.innerHTML = 'Score : ';
-        score_val.innerHTML = '0';
-        message.classList.remove('messageStyle');
-        play();
-    }
-});
-
-// Mova estes listeners de eventos para fora da função apply_gravity
-// para que estejam sempre ativos
-document.addEventListener('keydown', (e) => {
-    if(e.key == 'ArrowUp' || e.key == ' '){
-        img.src = 'images/Bird-2.png';
-        bird_dy = -7.6;
-    }
-});
-
-document.addEventListener('keyup', (e) => {
-    if(e.key == 'ArrowUp' || e.key == ' '){
-        img.src = 'images/Bird.png';
-    }
-});
-
-// Event listener for touchstart (Screen tap)
-document.addEventListener('touchstart', (e) => {
-    img.src = 'images/Bird-2.png';
-    bird_dy = -7.6;
-});
-
-// Event listener for touchend (Screen tap release)
-document.addEventListener('touchend', (e) => {
-    img.src = 'images/Bird.png';
-});
-
 function play(){
     function move(){
         if(game_state != 'Play') return;
@@ -103,6 +86,7 @@ function play(){
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
+                    updateRanking(parseInt(score_val.innerHTML));
                     return;
                 }else{
                     if(pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left && element.increase_score == '1'){
@@ -117,52 +101,24 @@ function play(){
     }
     requestAnimationFrame(move);
 
-    let bird_dy = 0;
-function apply_gravity(){
-    if(game_state != 'Play') return;
-    bird_dy = bird_dy + grativy;
+    function apply_gravity(){
+        if(game_state != 'Play') return;
+        bird_dy = bird_dy + grativy;
 
-    // Event listener for keydown
-    document.addEventListener('keydown', (e) => {
-        if(e.key == 'ArrowUp' || e.key == ' '){
-            img.src = 'images/Bird-2.png';
-            bird_dy = -7.6;
+        if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
+            game_state = 'End';
+            message.style.left = '28vw';
+            window.location.reload();
+            message.classList.remove('messageStyle');
+            return;
         }
-    });
-
-    // Event listener for keyup
-    document.addEventListener('keyup', (e) => {
-        if(e.key == 'ArrowUp' || e.key == ' '){
-            img.src = 'images/Bird.png';
-        }
-    });
-
-    // Event listener for touchstart (Screen tap)
-    document.addEventListener('touchstart', (e) => {
-        img.src = 'images/Bird-2.png';
-        bird_dy = -7.6;
-    });
-
-    // Event listener for touchend (Screen tap release)
-    document.addEventListener('touchend', (e) => {
-        img.src = 'images/Bird.png';
-    });
-
-    if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
-        game_state = 'End';
-        message.style.left = '28vw';
-        window.location.reload();
-        message.classList.remove('messageStyle');
-        return;
+        bird.style.top = bird_props.top + bird_dy + 'px';
+        bird_props = bird.getBoundingClientRect();
+        requestAnimationFrame(apply_gravity);
     }
-    bird.style.top = bird_props.top + bird_dy + 'px';
-    bird_props = bird.getBoundingClientRect();
-    requestAnimationFrame(apply_gravity);
-}
     requestAnimationFrame(apply_gravity);
 
     let pipe_seperation = 0;
-
     let pipe_gap = 35;
 
     function create_pipe(){
@@ -191,3 +147,32 @@ function apply_gravity(){
     }
     requestAnimationFrame(create_pipe);
 }
+
+function updateRanking(score){
+    ranking.push(score);
+
+    ranking.sort(function(a, b){
+        return b - a;
+    });
+
+    if(ranking.length > 5){
+        ranking.pop();
+    }
+
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+    displayRanking(); // Atualiza o ranking na página
+}
+
+function displayRanking() {
+    let rankingList = document.querySelector('.ranking_list');
+    rankingList.innerHTML = ''; // Limpar a lista atual
+
+    ranking.forEach((score, index) => {
+        let listItem = document.createElement('li');
+        listItem.textContent = `Posição ${index + 1}: ${score}`;
+        rankingList.appendChild(listItem);
+    });
+}
+
+// Chame essa função sempre que atualizar o ranking
+displayRanking();

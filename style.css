@@ -57,12 +57,13 @@
 .restart {
     color: blue;
 }
+/* Estilos gerais */
 .score {
 	position: fixed;
-	z-index: 10;
-	height: 10vh;
-	font-size: 10vh;
-	font-weight: 700; /* Torna a fonte mais ousada */
+	z-index: 5;
+	height: 5vh;
+	font-size: 5vh;
+	font-weight: 200; /* Torna a fonte mais ousada */
 	color: #FFF; /* Alterando a cor do texto para branco */
 	-webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #333; /* Alterando a cor do traço do texto para um cinza escuro */
@@ -74,24 +75,54 @@
 	margin: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 .score_val {
 	color: gold; /* A cor do score pode permanecer dourada para destacar */
 	font-weight: bold;
 }
-@media only screen and (max-width: 1080px) {
-    .message{
-		font-size: 50px;
-		top: 50%;
-		white-space: nowrap;
-	}
-	.score{
-		font-size: 8vh;
-	}
-	.bird{
-		width: 120px;
-		height: 90px;
-	}
-	.pipe_sprite{
-		width: 14vw;
-	}
+
+.ranking {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    color: #FFF;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ranking_title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.ranking_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Alterações para telas menores */
+@media only screen and (max-width: 600px) {
+    .score {
+        font-size: 4vh; /* Reduz o tamanho do score */
+        top: 0; /* Move o score para o topo */
+        left: 0; /* Move o score para a esquerda */
+    }
+    .ranking {
+        top: 0; /* Move o ranking para o topo */
+        right: 0; /* Move o ranking para a direita */
+    }
+    .ranking_title {
+        font-size: 3vh; /* Reduz o tamanho do título do ranking */
+    }
+    .ranking_list {
+        font-size: 2vh; /* Reduz o tamanho da lista de ranking */
+    }
 }
