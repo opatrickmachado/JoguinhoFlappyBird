@@ -1,43 +1,31 @@
-<h1 align="center">Jogo Flappy Bird</h1>
+# Jogo Flappy Bird
 
-<p align="center">
-  https://joguinhoflappybird.vercel.app/
-</p>
+Este é um projeto simples de um jogo Flappy Bird em HTML, CSS e JavaScript.
 
-<p align="center">
-  <strong>Um divertido jogo inspirado no famoso Flappy Bird!</strong>
-</p>
+## Visão Geral
 
-<p align="center">
-  <a href="#sobre-o-jogo">Sobre o Jogo</a> •
-  <a href="#como-jogar">Como Jogar</a> •
-  <a href="#dependências">Dependências</a> •
-  <a href="#autor">Autor</a> •
-  <a href="#licença">Licença</a>
-</p>
+Este projeto consiste em uma página HTML que apresenta o jogo Flappy Bird. O jogo é controlado usando a seta para cima para manter o pássaro voando entre os obstáculos. O objetivo é evitar colidir com os obstáculos e acumular a maior pontuação possível.
 
-## Sobre o Jogo
-
-O "Jogo Flappy Bird" é uma versão inspirada no clássico Flappy Bird, onde você controla um pássaro e precisa navegar por entre os obstáculos, desafiando sua habilidade e coordenação. Toque na tecla de seta para cima para controlar o pássaro e evite colidir com os obstáculos.
+![Imagem do Jogo](https://meusjoguinhos.vercel.app/img/JoguinhoFlappyBird.png)
 
 ## Como Jogar
 
-1. Abra o arquivo `index.html` em um navegador da web.
-2. Pressione a tecla "Enter" para iniciar o jogo.
-3. Use a tecla de seta para cima (&uarr;) para controlar o pássaro.
-4. Evite colidir com os obstáculos (tubos) que aparecem.
-5. Continue a voar entre os obstáculos e acumule pontos.
-6. O jogo termina se o pássaro colidir com um obstáculo ou tocar no chão.
+1. Acesse o jogo através do seguinte link: [Jogo Flappy Bird](https://joguinhoflappybird.vercel.app/).
+2. Pressione a tecla Enter para iniciar o jogo.
+3. Use a seta para cima (&uarr;) para controlar o pássaro e evitar colidir com os obstáculos.
+4. Tente acumular a maior pontuação possível!
 
-## Dependências
+## Capturas de Tela
 
-Este jogo utiliza as seguintes dependências:
+![Captura de Tela 1](screenshots/screenshot1.png)
+![Captura de Tela 2](screenshots/screenshot2.png)
 
--   [style.css](style.css): Arquivo CSS para estilização do jogo.
--   [Bird.png](images/Bird.png): Imagem representando o pássaro.
--   [favicon.png](images/favicon.png): Ícone do jogo exibido na aba do navegador.
--   [script.js](script.js): Arquivo JavaScript para a lógica do jogo.
+## Como Contribuir
 
----
+Se você gostaria de contribuir para este projeto, você pode seguir os passos abaixo:
 
-Este projeto foi criado para proporcionar diversão e desafio aos jogadores que adoram o Flappy Bird. Sinta-se à vontade para explorar, modificar e compartilhar este projeto com outras pessoas! Divirta-se jogando o "Jogo Flappy Bird" e teste suas habilidades de coordenação. Se você tiver alguma dúvida ou feedback, não hesite em nos contatar. Boa sorte e divirta-se!
+1. Faça um fork deste repositório.
+2. Clone o seu fork para o seu ambiente local.
+3. Faça as modificações desejadas.
+4. Faça um commit das suas alterações.
+5. Envie um pull request para este repositório.
