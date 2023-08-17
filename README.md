@@ -15,11 +15,6 @@ Este projeto consiste em uma página HTML que apresenta o jogo Flappy Bird. O jo
 3. Use a seta para cima (&uarr;) para controlar o pássaro e evitar colidir com os obstáculos.
 4. Tente acumular a maior pontuação possível!
 
-## Capturas de Tela
-
-![Captura de Tela 1](screenshots/screenshot1.png)
-![Captura de Tela 2](screenshots/screenshot2.png)
-
 ## Como Contribuir
 
 Se você gostaria de contribuir para este projeto, você pode seguir os passos abaixo:
