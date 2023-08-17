@@ -1,11 +1,11 @@
-<h1 align="center">Joguinho Genius</h1>
+<h1 align="center">Jogo Flappy Bird</h1>
 
 <p align="center">
-  https://joguinhogenius.vercel.app/
+  https://joguinhoflappybird.vercel.app/
 </p>
 
 <p align="center">
-  <strong>Um jogo de memória e destreza para testar suas habilidades!</strong>
+  <strong>Um divertido jogo inspirado no famoso Flappy Bird!</strong>
 </p>
 
 <p align="center">
@@ -18,25 +18,26 @@
 
 ## Sobre o Jogo
 
-O "Joguinho Genius" é um jogo divertido que testa suas habilidades de memória e destreza. O jogo exibirá uma sequência de cores que você deve repetir corretamente para avançar. À medida que você acerta a sequência, a dificuldade aumenta, desafiando você a lembrar e reproduzir uma sequência cada vez mais longa e complexa.
+O "Jogo Flappy Bird" é uma versão inspirada no clássico Flappy Bird, onde você controla um pássaro e precisa navegar por entre os obstáculos, desafiando sua habilidade e coordenação. Toque na tecla de seta para cima para controlar o pássaro e evite colidir com os obstáculos.
 
 ## Como Jogar
 
 1. Abra o arquivo `index.html` em um navegador da web.
-2. O jogo exibirá uma sequência de cores em uma ordem específica.
-3. Memorize a sequência de cores exibida.
-4. Clique nas cores na mesma ordem em que foram exibidas para repetir a sequência.
-5. À medida que você avança, a sequência de cores ficará mais longa e desafiadora.
-6. Continue repetindo as sequências corretamente para aumentar sua pontuação.
+2. Pressione a tecla "Enter" para iniciar o jogo.
+3. Use a tecla de seta para cima (&uarr;) para controlar o pássaro.
+4. Evite colidir com os obstáculos (tubos) que aparecem.
+5. Continue a voar entre os obstáculos e acumule pontos.
+6. O jogo termina se o pássaro colidir com um obstáculo ou tocar no chão.
 
 ## Dependências
 
 Este jogo utiliza as seguintes dependências:
 
--   [style.css](./css/style.css): Arquivo CSS para estilização do jogo.
--   [icon.png](./imgs/icon.png): Ícone do jogo exibido na aba do navegador.
--   [green.mp3](./sounds/green.mp3), [red.mp3](./sounds/red.mp3), [yellow.mp3](./sounds/yellow.mp3), [blue.mp3](./sounds/blue.mp3): Arquivos de áudio para representar as cores.
+-   [style.css](style.css): Arquivo CSS para estilização do jogo.
+-   [Bird.png](images/Bird.png): Imagem representando o pássaro.
+-   [favicon.png](images/favicon.png): Ícone do jogo exibido na aba do navegador.
+-   [script.js](script.js): Arquivo JavaScript para a lógica do jogo.
 
 ---
 
-Este projeto foi criado para proporcionar entretenimento e desafio aos jogadores que desejam testar suas habilidades de memória e destreza. Sinta-se à vontade para explorar, modificar e compartilhar este projeto com outras pessoas! Divirta-se jogando o "Joguinho Genius" e mostrando suas habilidades. Se você tiver alguma dúvida ou feedback, não hesite em nos contatar. Boa sorte e divirta-se!
+Este projeto foi criado para proporcionar diversão e desafio aos jogadores que adoram o Flappy Bird. Sinta-se à vontade para explorar, modificar e compartilhar este projeto com outras pessoas! Divirta-se jogando o "Jogo Flappy Bird" e teste suas habilidades de coordenação. Se você tiver alguma dúvida ou feedback, não hesite em nos contatar. Boa sorte e divirta-se!
